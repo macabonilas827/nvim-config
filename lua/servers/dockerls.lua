@@ -1,7 +1,14 @@
-return function(lspconfig, capabilities, on_attach)
-	lspconfig.dockerls.setup({
+-- ================================================================================================
+-- TITLE : bashls (Bash Language Server) LSP Setup
+-- LINKS :
+--   > github: https://github.com/bash-lsp/bash-language-server
+-- ================================================================================================
+
+--- @param capabilities table LSP client capabilities (typically from nvim-cmp or similar)
+--- @return nil
+return function(capabilities)
+	vim.lsp.config("bashls", {
 		capabilities = capabilities,
-		on_attach = on_attach,
-		filetypes = { "dockerfile" },
+		filetypes = { "sh", "bash", "zsh" },
 	})
 end

@@ -1,7 +1,14 @@
-return function(lspconfig, capabilities, on_attach)
-	lspconfig.clangd.setup({
+-- ================================================================================================
+-- TITLE : clangd (C/C++ Language Server) LSP Setup
+-- LINKS :
+--   > website: https://clangd.llvm.org/
+-- ================================================================================================
+
+--- @param capabilities table LSP client capabilities (typically from nvim-cmp or similar)
+--- @return nil
+return function(capabilities)
+	vim.lsp.config("clangd", {
 		capabilities = capabilities,
-		on_attach = on_attach,
 		cmd = {
 			"clangd",
 			"--offset-encoding=utf-16",

@@ -37,3 +37,7 @@ vim.keymap.set("n", "<leader>rc", "<Cmd>e ~/.config/nvim/init.lua<CR>", { desc =
 -- File Explorer
 vim.keymap.set("n", "<leader>m", "<Cmd>NvimTreeFocus<CR>", { desc = "Focus on File Explorer" })
 vim.keymap.set("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", { desc = "Toggle File Explorer" })
+
+-- C++ Quick Execution
+vim.keymap.set('n', '<leader><M-r>', ':!g++ % -o %:r && ./%:r<CR>', { noremap = true })
+vim.keymap.set('n', '<leader><M-c>', ':!g++ % -o %:r<CR>', { noremap = true })
